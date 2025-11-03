@@ -1,100 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..700&display=swap" rel="stylesheet">
-    
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Calculadora de Piquetes</title>
 </head>
+
 <body>
-    
+  <section>
+    <div class="calculadora-container">
+      <div class="header">
+        <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12.9355" y="32.4316" width="11.1398" height="20.9642" transform="rotate(-53.3828 12.9355 32.4316)"
+            fill="#03943C" />
+          <rect x="20.544" y="22.3615" width="20.9642" height="10.0055" transform="rotate(-53.3828 20.544 22.3615)"
+            fill="#7CEBA7" />
+          <rect x="4.21729" y="26.0867" width="20.9642" height="10.0055" transform="rotate(-53.3828 4.21729 26.0867)"
+            fill="#0A6C30" />
+          <rect x="29.2016" y="28.7653" width="15.8863" height="10.0055" transform="rotate(-53.3828 29.2016 28.7653)"
+            fill="#42C676" />
+        </svg>
 
-   <section>
+        <h1>Calculadora de Piquetes</h1>
+      </div>
 
-        <div class="calculadora-container">
-            <div class="header">
-                <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="12.9355" y="32.4316" width="11.1398" height="20.9642" transform="rotate(-53.3828 12.9355 32.4316)" fill="#03943C"/>
-                    <rect x="20.544" y="22.3615" width="20.9642" height="10.0055" transform="rotate(-53.3828 20.544 22.3615)" fill="#7CEBA7"/>
-                    <rect x="4.21729" y="26.0867" width="20.9642" height="10.0055" transform="rotate(-53.3828 4.21729 26.0867)" fill="#0A6C30"/>
-                    <rect x="29.2016" y="28.7653" width="15.8863" height="10.0055" transform="rotate(-53.3828 29.2016 28.7653)" fill="#42C676"/>
-                </svg>
-                    
-                <h1>Calculadora de Piquetes</h1>
-
-            </div>
-            <form >
-
-                <div class="campo-container">
-                    <label for="descanco">Período de Descanso da Gramínea</label>
-                    <input type="number" name="descanco" id="descanco">
-                </div>
-    
-                <div class="campo-container">
-                    <label for="pastagem">Período de Pastagem </label>
-                    <input type="number" name="pastagem" id="pastagem">
-                </div>
-                
-                <button type="button" id="btnCalcular">Calcular</button>
-    
-            </form>
-    
-            <div class="resultado-container">
-                  <div class="resultado-txt">
-                    <h2></h2>
-                   
-                  </div>
-                    
-            </div>
-    
+      <form>
+        <div class="campo-container">
+          <label for="descanco">Período de Descanso da Gramínea</label>
+          <input type="number" name="descanco" id="descanco">
         </div>
 
-      
+        <div class="campo-container">
+          <label for="pastagem">Período de Pastagem </label>
+          <input type="number" name="pastagem" id="pastagem">
+        </div>
 
+        <button type="button" id="btnCalcular">Calcular</button>
+      </form>
 
+      <div class="resultado-container">
+        <div class="resultado-txt">
+          <h2></h2>
+        </div>
+      </div>
 
-   </section>
+    </div>
 
-   <script>
-
-     const descanco = document.getElementById("descanco");
-     const pastagem = document.getElementById("pastagem");
-    
-
-     function calcularPiquetes(a, b){
-            return (a / b) + 1
-     }
-
-     document.getElementById('btnCalcular').addEventListener("click",() => {
-        
-        const numDescanco = descanco.value;
-        const numPastagem = pastagem.value;
-
-        if(numDescanco !== "" && numPastagem !== " "){
-            const txtresult = document.querySelector(".resultado-txt h2");
-        
-            let calculo = calcularPiquetes(numDescanco, numPastagem)
-
-            txtresult.innerHTML = `${calculo.toFixed(0)} <span>Número de Piquetes</span>`;
-        }
-
-       
-       
-        
-     });
-
-    
-     
-
-   </script>
-
-
+  </section>
+  <script src="./script.js"></script>
 </body>
+
 </html>
